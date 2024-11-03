@@ -1,0 +1,131 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 500;
+}
+
+body {
+  width: 100vw;
+  min-height: 100vh;
+
+  color: white;
+  background-color: black;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  text-align: center;
+
+  overflow: hidden;
+}
+
+body > h5 {
+  font-size: 3rem;
+  z-index: 1;
+  /* line-height: 100%; */
+  animation: fade-in 0.5s cubic-bezier(0.19, 1, 0.22, 0.96);
+}
+
+body > h1 {
+  font-size: 15rem;
+  font-weight: 600;
+  word-spacing: -1rem;
+  /* background-color: red; */
+  z-index: 1;
+  line-height: 110%;
+  animation: fade-in 2s cubic-bezier(0.19, 1, 0.22, 0.96);
+}
+
+.bokeh {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300px;
+  height: 300px;
+  rotate: 45deg;
+  z-index: 0;
+  border-radius: 100%;
+  background-color: rgba(255, 255, 255, 0.6);
+  animation: sparkle 10s alternate infinite;
+  filter: blur(5px);
+}
+
+.bokeh2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300px;
+  height: 300px;
+  rotate: 45deg;
+  z-index: 0;
+  border-radius: 100%;
+  background-color: rgba(255, 255, 255, 0.05);
+  animation: sparkle 10s 1s alternate-reverse infinite;
+  filter: blur(5px);
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    scale: 0.8;
+  }
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+@keyframes sparkle {
+  0% {
+    top: 40%;
+    left: 50%;
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+  10% {
+    top: 60%;
+    left: 70%;
+  }
+  20% {
+    top: 60%;
+    left: 55%;
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+  50% {
+    top: 60%;
+    left: 15%;
+  }
+  70% {
+    top: 40%;
+    left: 50%;
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+  80% {
+    top: 100%;
+    left: 40%;
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+  90% {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+  100% {
+    top: 50%;
+    left: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  body > h5 {
+    font-size: 2rem;
+    /* line-height: 100%; */
+  }
+
+  body > h1 {
+    font-size: 7.5rem;
+    margin-top: 1rem;
+  }
+}
