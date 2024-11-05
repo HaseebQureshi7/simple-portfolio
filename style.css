@@ -38,6 +38,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+  animation: fade-in 0.5s cubic-bezier(0.19, 1, 0.22, 0.96);
 }
 
 .view-0 > h5 {
@@ -67,13 +68,14 @@ body {
 .view-1 > h2 {
   font-size: 11rem;
   font-weight: 600;
-  animation: fade-in 2s cubic-bezier(0.19, 1, 0.22, 0.96);
+  animation: fade-in 2s cubic-bezier(0.19, 1, 0.22, 0.96),
+    text-expand 1s cubic-bezier(0.19, 1, 0.22, 0.96);
 }
 
 .view-1 > h3 {
   font-size: 5rem;
   line-height: 100%;
-  animation: fade-in 1s cubic-bezier(0.19, 1, 0.22, 0.96);
+  animation: sentence-expand 1s cubic-bezier(0.19, 1, 0.22, 0.96);
 }
 
 .view-1 > h4 {
@@ -97,7 +99,8 @@ body {
   word-spacing: -0.5rem;
   z-index: 1;
   line-height: 110%;
-  animation: fade-in 2s cubic-bezier(0.19, 1, 0.22, 0.96);
+  animation: sentence-expand 1s cubic-bezier(0.19, 1, 0.22, 0.96),
+    word-spacing 1s 1s cubic-bezier(0.19, 1, 0.22, 0.96);
 }
 
 .view-3 {
@@ -114,7 +117,8 @@ body {
   word-spacing: -0.5rem;
   z-index: 1;
   line-height: 110%;
-  animation: fade-in 2s cubic-bezier(0.19, 1, 0.22, 0.96);
+  animation: sentence-expand 1s cubic-bezier(0.19, 1, 0.22, 0.96),
+    word-spacing 1s 1s cubic-bezier(0.19, 1, 0.22, 0.96);
 }
 
 .view-4 {
@@ -131,7 +135,48 @@ body {
   word-spacing: -0.5rem;
   z-index: 1;
   line-height: 110%;
-  animation: fade-in 2s cubic-bezier(0.19, 1, 0.22, 0.96);
+  animation: sentence-expand 1s cubic-bezier(0.19, 1, 0.22, 0.96),
+    word-spacing 1s 1s cubic-bezier(0.19, 1, 0.22, 0.96);
+}
+
+.view-5 {
+  /* display: flex; */
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  display: none;
+}
+
+.view-5 > h1 {
+  font-size: 7.5rem;
+  font-weight: 600;
+  /* word-spacing: -0.5rem; */
+  z-index: 1;
+  line-height: 110%;
+  animation: sentence-expand 1s cubic-bezier(0.19, 1, 0.22, 0.96);
+}
+
+.view-5 > .social-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* gap: 50px; */
+  margin-top: 25px;
+  animation: gap-expand 1s cubic-bezier(0.19, 1, 0.22, 0.96) forwards,
+    warper 2s cubic-bezier(0.19, 1, 0.22, 0.96) forwards;
+}
+
+.view-5 > .social-container > .social {
+  width: 25%;
+  aspect-ratio: 1;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 }
 
 .bokeh {
@@ -148,6 +193,21 @@ body {
   filter: blur(5px);
 }
 
+.bokeh1 {
+  position: absolute;
+  top: -10%;
+  left: -10%;
+  width: 200px;
+  height: 200px;
+  rotate: 45deg;
+  z-index: 0;
+  border-radius: 100%;
+  background-color: rgba(0, 145, 255, 0.5);
+  /* opacity: 0.4; */
+  animation: fade-in 5s alternate-reverse infinite;
+  filter: blur(40px);
+}
+
 .bokeh2 {
   position: absolute;
   top: 50%;
@@ -160,6 +220,51 @@ body {
   background-color: rgba(255, 255, 255, 0.05);
   animation: sparkle 10s 1s alternate-reverse infinite;
   filter: blur(5px);
+}
+
+@keyframes text-expand {
+  from {
+    letter-spacing: -20px;
+  }
+  to {
+    letter-spacing: auto;
+  }
+}
+
+@keyframes sentence-expand {
+  from {
+    word-spacing: -20px;
+  }
+  to {
+    word-spacing: auto;
+  }
+}
+
+@keyframes gap-expand {
+  from {
+    gap: 0;
+  }
+  to {
+    gap: 50px;
+  }
+}
+
+@keyframes color-burner {
+  from {
+    filter: hue-rotate(100deg);
+  }
+  to {
+    filter: hue-rotate(0deg);
+  }
+}
+
+@keyframes warper {
+  from {
+    transform: skewY(-10deg);
+  }
+  to {
+    transform: skewY(0deg);
+  }
 }
 
 @keyframes fade-in {
@@ -227,6 +332,7 @@ body {
   body > .view-1 > h2 {
     font-size: 6rem;
     font-weight: 600;
+    animation: fade-in 2s cubic-bezier(0.19, 1, 0.22, 0.96);
   }
 
   body > .view-1 > h3 {
@@ -254,5 +360,9 @@ body {
     font-size: 4rem;
     /* font-weight: 500; */
     word-spacing: 2.5px;
+  }
+
+  .view-5 > h1 {
+    font-size: 5rem;
   }
 }

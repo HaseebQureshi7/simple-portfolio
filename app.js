@@ -3,6 +3,10 @@ const view1 = document.querySelector(".view-1");
 const view2 = document.querySelector(".view-2");
 const view3 = document.querySelector(".view-3");
 const view4 = document.querySelector(".view-4");
+const view5 = document.querySelector(".view-5");
+
+var stackCounter = 1;
+totalPages = 6;
 
 var stackIncrementationEnabled = true;
 var stackDecrementationEnabled = true;
@@ -78,8 +82,6 @@ function detectUpDown(onArrowDown, onArrowUp) {
     }
   });
 }
-var stackCounter = 1;
-totalPages = 5;
 
 StackIncrementor = () => {
   if (stackCounter == totalPages) {
@@ -87,6 +89,10 @@ StackIncrementor = () => {
   }
   stackCounter += 1;
   stackUpdater();
+  if (navigator.vibrate) {
+    navigator.vibrate([50, 50, 50]);
+  }
+
   console.log(stackCounter);
 };
 
@@ -96,6 +102,8 @@ StackDecrementor = () => {
   }
   stackCounter -= 1;
   stackUpdater();
+  navigator.vibrate([50, 50, 50, 50, 50]);
+
   console.log(stackCounter);
 };
 
@@ -122,6 +130,7 @@ const stackUpdater = () => {
       view2.style.display = "none";
       view3.style.display = "none";
       view4.style.display = "none";
+      view5.style.display = "none";
       console.log("View 1 Active");
       break;
     case 2:
@@ -130,6 +139,7 @@ const stackUpdater = () => {
       view2.style.display = "none";
       view3.style.display = "none";
       view4.style.display = "none";
+      view5.style.display = "none";
       console.log("View 2 Active");
       break;
     case 3:
@@ -138,6 +148,7 @@ const stackUpdater = () => {
       view2.style.display = "flex";
       view3.style.display = "none";
       view4.style.display = "none";
+      view5.style.display = "none";
       console.log("View 3 Active");
       break;
     case 4:
@@ -146,6 +157,7 @@ const stackUpdater = () => {
       view2.style.display = "none";
       view3.style.display = "flex";
       view4.style.display = "none";
+      view5.style.display = "none";
       console.log("View 4 Active");
       break;
     case 5:
@@ -154,6 +166,16 @@ const stackUpdater = () => {
       view2.style.display = "none";
       view3.style.display = "none";
       view4.style.display = "flex";
+      view5.style.display = "none";
+      console.log("View 5 Active");
+      break;
+    case 6:
+      view0.style.display = "none";
+      view1.style.display = "none";
+      view2.style.display = "none";
+      view3.style.display = "none";
+      view4.style.display = "none";
+      view5.style.display = "flex";
       console.log("View 5 Active");
       break;
   }
