@@ -178,6 +178,14 @@ body {
   cursor: pointer;
 }
 
+.view-5 > .social-container > .social:hover {
+  animation: color-burner 2s cubic-bezier(0.19, 1, 0.22, 0.96) forwards;
+}
+
+.view-5 > .social-container > .social:not(:hover) {
+  animation: none;
+}
+
 .view-5 > .social-container > .mail {
   background-color: #e22727;
   background-image: url("images/gmail.png");

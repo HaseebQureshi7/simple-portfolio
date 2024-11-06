@@ -8,6 +8,37 @@ const view5 = document.querySelector(".view-5");
 var stackCounter = 1;
 totalPages = 6;
 
+function applyContinuous3DTilt(element, tiltIntensity = 15) {
+  element.style.transition = "transform 0.2s ease"; // Smooth transition
+
+  window.addEventListener("mousemove", (event) => {
+    const { width, height, left, top } = element.getBoundingClientRect();
+    const mouseX = event.clientX - left;
+    const mouseY = event.clientY - top;
+
+    // Calculate tilt based on cursor position
+    const rotateY = (mouseX / width - 0.5) * tiltIntensity * 2;
+    const rotateX = (mouseY / height - 0.5) * -tiltIntensity * 2;
+
+    element.style.transform = `perspective(500px) rotateY(${rotateY}deg) rotateX(${rotateX}deg)`;
+  });
+}
+
+// Usage
+const h1s = document.querySelector("h1");
+const bokeh = document.querySelector(".bokeh");
+const bokeh2 = document.querySelector(".bokeh2");
+const socials = document.querySelectorAll(".social");
+
+// console.log(socials);
+
+applyContinuous3DTilt(bokeh, 10); // Apply tilt effect to bokeh
+applyContinuous3DTilt(bokeh2, 15); // Apply tilt effect to bokeh
+applyContinuous3DTilt(h1s, 2); // Apply tilt effect to h1
+socials.forEach((social) => {
+  applyContinuous3DTilt(social, 1.5);
+});
+
 var stackIncrementationEnabled = true;
 var stackDecrementationEnabled = true;
 
