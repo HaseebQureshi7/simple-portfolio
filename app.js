@@ -90,7 +90,7 @@ StackIncrementor = () => {
   stackCounter += 1;
   stackUpdater();
   if (navigator.vibrate) {
-    navigator.vibrate([50, 50, 50]);
+    navigator.vibrate([10]);
   }
 
   console.log(stackCounter);
@@ -102,7 +102,7 @@ StackDecrementor = () => {
   }
   stackCounter -= 1;
   stackUpdater();
-  navigator.vibrate([50, 50, 50, 50, 50]);
+  navigator.vibrate([10]);
 
   console.log(stackCounter);
 };

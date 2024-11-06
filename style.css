@@ -99,8 +99,7 @@ body {
   word-spacing: -0.5rem;
   z-index: 1;
   line-height: 110%;
-  animation: sentence-expand 1s cubic-bezier(0.19, 1, 0.22, 0.96),
-    word-spacing 1s 1s cubic-bezier(0.19, 1, 0.22, 0.96);
+  animation: sentence-expand 1s cubic-bezier(0.19, 1, 0.22, 0.96);
 }
 
 .view-3 {
@@ -177,6 +176,52 @@ body {
   justify-content: center;
   align-items: center;
   cursor: pointer;
+}
+
+.view-5 > .social-container > .mail {
+  background-color: #e22727;
+  background-image: url("images/gmail.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  background-size: 60px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin: 10px;
+  display: inline-block;
+  box-shadow: 0 0 10px #e22727, 0 0 20px #e22727, 0 0 30px #e22727,
+    0 0 40px #e22727;
+}
+
+.view-5 > .social-container > .linkedin {
+  background-color: #517ee0;
+  background-image: url("images/linkedin.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin: 10px;
+  display: inline-block;
+  box-shadow: 0 0 10px #517ee0, 0 0 20px #517ee0, 0 0 30px #517ee0,
+    0 0 40px #517ee0;
+}
+
+.view-5 > .social-container > .whatsapp {
+  background-color: #8ae75b;
+  background-image: url("images/whatsapp.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin: 10px;
+  display: inline-block;
+  box-shadow: 0 0 10px #8ae75b, 0 0 20px #8ae75b, 0 0 30px #8ae75b,
+    0 0 40px #8ae75b;
 }
 
 .bokeh {
@@ -318,36 +363,38 @@ body {
 }
 
 @media screen and (max-width: 480px) {
-  body > .view-0 > h5 {
+  .view-0 > h5 {
     font-size: 2rem;
     /* line-height: 100%; */
   }
 
-  body > .view-0 > h1 {
+  .view-0 > h1 {
     font-size: 7.5rem;
     /* font-weight: 500; */
     margin-top: 1rem;
   }
 
-  body > .view-1 > h2 {
+  .view-1 > h2 {
     font-size: 6rem;
     font-weight: 600;
     animation: fade-in 2s cubic-bezier(0.19, 1, 0.22, 0.96);
   }
 
-  body > .view-1 > h3 {
+  .view-1 > h3 {
     font-size: 3rem;
     margin-top: 1rem;
   }
 
-  body > .view-1 > h4 {
+  .view-1 > h4 {
     width: 70%;
   }
 
   .view-2 > h1 {
-    font-size: 4rem;
+    font-size: 4.5rem;
     /* font-weight: 500; */
     word-spacing: 2.5px;
+    /* animation: text-expand 1s cubic-bezier(0.19, 1, 0.22, 0.96), */
+    /* word-expand 1s cubic-bezier(0.19, 1, 0.22, 0.96); */
   }
 
   .view-3 > h1 {
