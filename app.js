@@ -27,6 +27,7 @@ const enableStackDecrementation = () => {
 
 function detectScroll(onScrollDown, onScrollUp) {
   window.addEventListener("wheel", (event) => {
+    if (!stackIncrementationEnabled) return;
     if (event.deltaY > 0) {
       stackIncrementationEnabled && onScrollDown();
       stackIncrementationEnabled = false;
