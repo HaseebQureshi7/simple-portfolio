@@ -190,8 +190,7 @@ body {
   border-radius: 50%;
   margin: 10px;
   display: inline-block;
-  box-shadow: 0 0 10px #e22727, 0 0 20px #e22727, 0 0 30px #e22727,
-    0 0 40px #e22727;
+  box-shadow: 0 0 10px #e22727, 0 0 30px #e22727, 0 0 40px #e22727;
 }
 
 .view-5 > .social-container > .linkedin {
@@ -205,8 +204,7 @@ body {
   border-radius: 50%;
   margin: 10px;
   display: inline-block;
-  box-shadow: 0 0 10px #517ee0, 0 0 20px #517ee0, 0 0 30px #517ee0,
-    0 0 40px #517ee0;
+  box-shadow: 0 0 10px #517ee0, 0 0 30px #517ee0, 0 0 40px #517ee0;
 }
 
 .view-5 > .social-container > .whatsapp {
@@ -220,8 +218,7 @@ body {
   border-radius: 50%;
   margin: 10px;
   display: inline-block;
-  box-shadow: 0 0 10px #8ae75b, 0 0 20px #8ae75b, 0 0 30px #8ae75b,
-    0 0 40px #8ae75b;
+  box-shadow: 0 0 10px #8ae75b, 0 0 30px #8ae75b, 0 0 40px #8ae75b;
 }
 
 .bokeh {
