@@ -46,19 +46,19 @@ const enableStackIncrementation = () => {
   const reactivator = setTimeout(() => {
     stackIncrementationEnabled = true;
     return clearTimeout(reactivator);
-  }, 1000);
+  }, 600);
 };
 
 const enableStackDecrementation = () => {
   const reactivator = setTimeout(() => {
     stackDecrementationEnabled = true;
     return clearTimeout(reactivator);
-  }, 1000);
+  }, 600);
 };
 
 function detectScroll(onScrollDown, onScrollUp) {
   window.addEventListener("wheel", (event) => {
-    if (!stackIncrementationEnabled) return;
+    if (!stackIncrementationEnabled || !stackDecrementationEnabled) return;
     if (event.deltaY > 0) {
       stackIncrementationEnabled && onScrollDown();
       stackIncrementationEnabled = false;
